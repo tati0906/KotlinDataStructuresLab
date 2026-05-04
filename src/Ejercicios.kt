@@ -20,3 +20,20 @@ fun reto1ControlGastos() {
     println("Gasto más alto: $$maximo")
     println("Gasto más bajo: $$minimo")
 }
+// Reto 2: Filtro de Empleados Senior
+fun reto2FiltroEmpleados() {
+    println("\n Reto 2: Filtro de Empleados Senior")
+    val empleados = listOf(
+        Pair("Ana", 35), Pair("Carlos", 28), Pair("María", 42),
+        Pair("Luis", 31), Pair("Sofía", 55), Pair("Pedro", 29),
+        Pair("Laura", 38), Pair("Jorge", 27), Pair("Carmen", 48),
+        Pair("Diego", 33)
+    )
+    val seniors = mutableListOf<String>()
+    for (emp in empleados) {
+        if (emp.second > 30) {
+            seniors.add(emp.first.uppercase())
+        }
+    }
+    println("Empleados mayores de 30 años (en mayúsculas): $seniors")
+}
