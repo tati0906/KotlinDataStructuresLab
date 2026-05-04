@@ -492,3 +492,19 @@ fun reto27PremiosVendedores() {
         if (venta > promedio) println("  $vendedor: \$$venta")
     }
 }
+
+// Reto 28: Calculadora de Tarifas de Parking
+fun reto28TarifasParking() {
+    println("\n Reto 28: Calculadora de Tarifas de Parking ")
+    val tarifas = mapOf(
+        1 to 3000, 2 to 5000, 3 to 7000, 4 to 9000, 5 to 10000,
+        6 to 11000, 7 to 12000, 8 to 13000, 9 to 14000, 10 to 15000
+    )
+    fun consultarCosto(horas: Int): Int {
+        return if (horas in tarifas) tarifas[horas]!!
+        else (tarifas[10]!! + (horas - 10) * 1500)
+    }
+    for (h in listOf(1, 3, 5, 8, 10, 12)) {
+        println("  $h hora(s) → \$${consultarCosto(h)}")
+    }
+}
