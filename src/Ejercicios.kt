@@ -460,3 +460,18 @@ fun reto25RendimientoMaraton() {
     println("Eliminados (outliers): mínimo=$minT, máximo=$maxT")
     println("Promedio real de entrenamiento: ${"%.1f".format(promedio)} minutos")
 }
+
+// Reto 26: Compresión de Logs de Servidor
+fun reto26CompresionLogs() {
+    println("\n Reto 26: Compresión de Logs de Servidor ")
+    val estados = listOf("UP","UP","DOWN","DOWN","DOWN","UP","UP","UP","DOWN","UP")
+    val resumen = mutableListOf<Pair<String, Int>>()
+    var i = 0
+    while (i < estados.size) {
+        val estado = estados[i]; var count = 0
+        while (i < estados.size && estados[i] == estado) { count++; i++ }
+        resumen.add(Pair(estado, count))
+    }
+    println("Log resumido:")
+    for ((estado, veces) in resumen) println("  \"$estado\" aparece $veces veces")
+}
