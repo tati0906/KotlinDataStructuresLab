@@ -125,3 +125,17 @@ fun reto7InventarioDespensa() {
     consumir("Frijoles", 1)
     println("Despensa final: $despensa")
 }
+
+// Reto 8: Cálculo de Promedio Académico
+fun reto8PromedioAcademico() {
+    println("\n Reto 8: Cálculo de Promedio Académico ")
+    val calificaciones = listOf(
+        Pair(4.5, 0.30), Pair(3.8, 0.20),
+        Pair(4.2, 0.25), Pair(3.5, 0.15), Pair(5.0, 0.10)
+    )
+    var notaFinal = 0.0
+    for ((nota, peso) in calificaciones) {
+        notaFinal += nota * peso
+    }
+    println("Nota final definitiva: ${"%.2f".format(notaFinal)}")
+}
