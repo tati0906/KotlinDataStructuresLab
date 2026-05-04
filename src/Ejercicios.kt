@@ -298,3 +298,15 @@ fun reto17MapaAlmacen() {
     println("Diagonal principal (pasillo central): $diagPrincipal")
     println("Diagonal secundaria: $diagSecundaria")
 }
+
+// Reto 18: Fusión de Recetas
+fun reto18FusionRecetas() {
+    println("\n Reto 18: Fusión de Recetas ")
+    val chef1 = mapOf("Harina" to 2.5, "Azúcar" to 1.0, "Mantequilla" to 0.5)
+    val chef2 = mapOf("Harina" to 1.5, "Leche" to 0.8, "Azúcar" to 0.5, "Huevos" to 0.3)
+    val listaCompras = mutableMapOf<String, Double>()
+    for ((ing, cant) in chef1) listaCompras[ing] = (listaCompras[ing] ?: 0.0) + cant
+    for ((ing, cant) in chef2) listaCompras[ing] = (listaCompras[ing] ?: 0.0) + cant
+    println("Lista de compras combinada:")
+    for ((ing, cant) in listaCompras) println("  $ing: ${"%.1f".format(cant)} kg")
+}
