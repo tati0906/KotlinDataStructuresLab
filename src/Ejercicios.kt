@@ -447,3 +447,16 @@ fun estaBalanceado(manifiesto: String): Boolean {
 
     return contador == 0
 }
+
+// Reto 25: Rendimiento de Maratón
+fun reto25RendimientoMaraton() {
+    println("\n Reto 25: Rendimiento de Maratón ")
+    val tiempos = mutableListOf(210, 185, 240, 198, 175, 222, 205, 190, 260, 180)
+    println("Tiempos originales: $tiempos (minutos)")
+    var minT = tiempos[0]; var maxT = tiempos[0]
+    for (t in tiempos) { if (t < minT) minT = t; if (t > maxT) maxT = t }
+    tiempos.remove(minT); tiempos.remove(maxT)
+    val promedio = tiempos.average()
+    println("Eliminados (outliers): mínimo=$minT, máximo=$maxT")
+    println("Promedio real de entrenamiento: ${"%.1f".format(promedio)} minutos")
+}
