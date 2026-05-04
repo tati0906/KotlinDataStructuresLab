@@ -70,3 +70,21 @@ fun reto4CarritoCompras() {
     println("Unidades por producto:")
     for ((prod, cant) in conteo) println("  $prod: $cant unidades")
 }
+
+// Reto 5: Historial de Navegación Reversible
+fun reto5HistorialNavegacion() {
+    println("\n Reto 5: Historial de Navegación Reversible ")
+    val historial = arrayOf(
+        "google.com", "github.com", "kotlinlang.org",
+        "stackoverflow.com", "anthropic.com"
+    )
+    val invertido = Array(historial.size) { "" }
+    var izq = 0; var der = historial.size - 1
+    val temp = historial.copyOf()
+    while (izq < der) {
+        val aux = temp[izq]; temp[izq] = temp[der]; temp[der] = aux
+        izq++; der--
+    }
+    println("Historial invertido (botón Atrás):")
+    for (url in temp) println("  <- $url")
+}
