@@ -377,3 +377,18 @@ fun reto21DiasPrimos() {
     }
     println("Pisos con mantenimiento especial (marca $marca): $pisosPrimos")
 }
+
+// Reto 22: Pila de Platos Sucios
+fun reto22PilaPlatos() {
+    println("\n Reto 22: Pila de Platos Sucios (LIFO) ")
+    val pila = mutableListOf<String>()
+    fun push(plato: String) { pila.add(plato); println("  Apilado: $plato → Pila: $pila") }
+    fun pop(): String? {
+        if (pila.isEmpty()) { println("  ¡Pila vacía!"); return null }
+        val plato = pila.removeLast()
+        println("  Lavado: $plato → Pila: $pila")
+        return plato
+    }
+    push("Plato-1"); push("Plato-2"); push("Plato-3")
+    pop(); push("Plato-4"); pop(); pop()
+}
