@@ -139,3 +139,16 @@ fun reto8PromedioAcademico() {
     }
     println("Nota final definitiva: ${"%.2f".format(notaFinal)}")
 }
+
+// Reto 9: Traductor de Códigos de País
+fun reto9TraductorPaises() {
+    println("\n Reto 9: Traductor de Códigos de País ")
+    val paises = mapOf(
+        "CO" to "Colombia", "MX" to "México",
+        "AR" to "Argentina", "US" to "Estados Unidos",
+        "ES" to "España"
+    )
+    for ((iso, nombre) in paises) {
+        println("El código [$iso] pertenece a [$nombre]")
+    }
+}
