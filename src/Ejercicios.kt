@@ -230,3 +230,17 @@ fun reto13RepartoPedidos() {
         camion++
     }
 }
+
+// Reto 14: Identificador de Ticket Único
+fun reto14TicketUnico() {
+    println("\n Reto 14: Identificador de Ticket Único ")
+    val tickets = listOf(101, 202, 303, 101, 404, 202, 505, 606, 303, 707)
+    val conteo = mutableMapOf<Int, Int>()
+    for (t in tickets) conteo[t] = (conteo[t] ?: 0) + 1
+    var primerUnico = -1
+    for (t in tickets) {
+        if (conteo[t] == 1) { primerUnico = t; break }
+    }
+    println("Tickets: $tickets")
+    println("Primer ID único (no repetido): $primerUnico")
+}
