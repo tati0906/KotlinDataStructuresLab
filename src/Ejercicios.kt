@@ -359,3 +359,21 @@ fun reto20UnionAgendas() {
     val maestra = merge(unidos)
     println("Lista maestra ordenada: $maestra")
 }
+
+// Reto 21: Días de Mantenimiento (Primos)
+fun reto21DiasPrimos() {
+    println("\n Reto 21: Días de Mantenimiento (Primos) ")
+    fun esPrimo(n: Int): Boolean {
+        if (n < 2) return false
+        for (i in 2..Math.sqrt(n.toDouble()).toInt()) {
+            if (n % i == 0) return false
+        }
+        return true
+    }
+    val marca = "Otis"
+    val pisosPrimos = Array(0) { 0 }.toMutableList()
+    for (piso in 1..100) {
+        if (esPrimo(piso)) pisosPrimos.add(piso)
+    }
+    println("Pisos con mantenimiento especial (marca $marca): $pisosPrimos")
+}
