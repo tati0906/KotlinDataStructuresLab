@@ -508,3 +508,21 @@ fun reto28TarifasParking() {
         println("  $h hora(s) → \$${consultarCosto(h)}")
     }
 }
+
+// Reto 29: Parejas de Viaje por Peso
+fun reto29ParejasViajePeso() {
+    println("\n Reto 29: Parejas de Viaje por Peso ")
+    val maletas = listOf(15, 23, 10, 30, 7, 38, 20, 25)
+    val target = 45
+    println("Maletas: $maletas  |  Target: $target kg")
+    var encontrado = false
+    for (i in maletas.indices) {
+        for (j in i + 1 until maletas.size) {
+            if (maletas[i] + maletas[j] == target) {
+                println("  ✓ Pareja encontrada: ${maletas[i]}kg + ${maletas[j]}kg = $target kg")
+                encontrado = true
+            }
+        }
+    }
+    if (!encontrado) println("  No se encontró ninguna pareja que sume $target kg")
+}
