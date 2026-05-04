@@ -56,3 +56,17 @@ fun reto3LimpiezaContactos() {
     for (n in ordenados) println("  $n")
 }
 
+// Reto 4: Análisis de Carrito de Compras
+fun reto4CarritoCompras() {
+    println("\n Reto 4: Análisis de Carrito de Compras ")
+    val productos = listOf(
+        "Manzana", "Leche", "Manzana", "Pan", "Leche",
+        "Leche", "Manzana", "Jugo", "Pan", "Manzana"
+    )
+    val conteo = mutableMapOf<String, Int>()
+    for (p in productos) {
+        conteo[p] = (conteo[p] ?: 0) + 1
+    }
+    println("Unidades por producto:")
+    for ((prod, cant) in conteo) println("  $prod: $cant unidades")
+}
