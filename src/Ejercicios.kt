@@ -20,6 +20,7 @@ fun reto1ControlGastos() {
     println("Gasto más alto: $$maximo")
     println("Gasto más bajo: $$minimo")
 }
+
 // Reto 2: Filtro de Empleados Senior
 fun reto2FiltroEmpleados() {
     println("\n Reto 2: Filtro de Empleados Senior")
@@ -37,3 +38,21 @@ fun reto2FiltroEmpleados() {
     }
     println("Empleados mayores de 30 años (en mayúsculas): $seniors")
 }
+
+// Reto 3: Limpieza de Contactos Duplicados
+fun reto3LimpiezaContactos() {
+    println("\n Reto 3: Limpieza de Contactos Duplicados ")
+    val numerosRaw = listOf(
+        3001234567, 3009876543, 3001234567, 3015551234,
+        3009876543, 3022223333, 3015551234, 3031112222,
+        3044445555, 3022223333, 3056667777, 3031112222,
+        3001234567, 3068889999, 3044445555, 3071110000,
+        3082221111, 3056667777, 3093332222, 3004445566
+    )
+    val unicos = mutableSetOf<Long>()
+    for (n in numerosRaw) unicos.add(n.toLong())
+    val ordenados = unicos.sorted()
+    println("Números únicos ordenados (${ordenados.size}):")
+    for (n in ordenados) println("  $n")
+}
+
