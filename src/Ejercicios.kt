@@ -333,3 +333,29 @@ fun reto19RankingApps() {
         println("  ${i + 1}. ${apps[i].first} - ★${apps[i].second}")
     }
 }
+
+// Reto 20: Unión de Agendas Ordenadas
+fun reto20UnionAgendas() {
+    println("\n Reto 20: Unión de Agendas Ordenadas ")
+    val agenda1 = listOf("Ana", "Carlos", "María", "Pedro")
+    val agenda2 = listOf("Beatriz", "Diana", "Luis", "Sofía", "Zoe")
+    val unidos = mutableListOf<String>()
+    unidos.addAll(agenda1); unidos.addAll(agenda2)
+    // Merge sort manual
+    fun merge(lista: MutableList<String>): MutableList<String> {
+        if (lista.size <= 1) return lista
+        val mid = lista.size / 2
+        val izq = merge(lista.subList(0, mid).toMutableList())
+        val der = merge(lista.subList(mid, lista.size).toMutableList())
+        val result = mutableListOf<String>()
+        var i = 0; var j = 0
+        while (i < izq.size && j < der.size) {
+            if (izq[i] <= der[j]) result.add(izq[i++]) else result.add(der[j++])
+        }
+        while (i < izq.size) result.add(izq[i++])
+        while (j < der.size) result.add(der[j++])
+        return result
+    }
+    val maestra = merge(unidos)
+    println("Lista maestra ordenada: $maestra")
+}
