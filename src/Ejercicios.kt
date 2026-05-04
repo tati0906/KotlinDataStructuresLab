@@ -475,3 +475,20 @@ fun reto26CompresionLogs() {
     println("Log resumido:")
     for ((estado, veces) in resumen) println("  \"$estado\" aparece $veces veces")
 }
+
+// Reto 27: Premios a Vendedores
+fun reto27PremiosVendedores() {
+    println("\n Reto 27: Premios a Vendedores ")
+    val ventas = mapOf(
+        "Ana" to 5200000, "Beto" to 3800000, "Carlos" to 6100000,
+        "Diana" to 4500000, "Eva" to 7200000, "Felipe" to 3200000
+    )
+    var totalVentas = 0
+    for ((_, v) in ventas) totalVentas += v
+    val promedio = totalVentas.toDouble() / ventas.size
+    println("Promedio del equipo: \$${"%.0f".format(promedio)}")
+    println("Vendedores que superaron el promedio (reciben bono):")
+    for ((vendedor, venta) in ventas) {
+        if (venta > promedio) println("  $vendedor: \$$venta")
+    }
+}
