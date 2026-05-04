@@ -407,3 +407,43 @@ fun reto23SeguimientoDieta() {
         println("  Día ${i + 2}: ${if (diferencias[i] >= 0) "+" else ""}${"%.1f".format(diferencias[i])} kcal")
     }
 }
+
+// ─── Reto 24: Organización de Contenedores ───────────────────
+fun reto24ContenedoresBalanceados() {
+
+    println("\n=== Reto 24: Organización de Contenedores ===")
+
+    val manifiestos = listOf(
+        "{}{}",
+        "{",
+        "}{}",
+        "{{}}",
+        "{}{}{}"
+    )
+
+    for (m in manifiestos) {
+        val resultado = if (estaBalanceado(m)) {
+            "✔ Balanceado"
+        } else {
+            "✘ Desbalanceado"
+        }
+
+        println("$m → $resultado")
+    }
+}
+
+fun estaBalanceado(manifiesto: String): Boolean {
+    var contador = 0
+
+    for (c in manifiesto) {
+        when (c) {
+            '{' -> contador++
+            '}' -> {
+                contador--
+                if (contador < 0) return false
+            }
+        }
+    }
+
+    return contador == 0
+}
