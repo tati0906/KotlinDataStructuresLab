@@ -212,3 +212,21 @@ fun reto12RutaReversible() {
     println("Ruta 1 $ruta1 → ¿Es espejo? ${esPalindromo(ruta1)}")
     println("Ruta 2 $ruta2 → ¿Es espejo? ${esPalindromo(ruta2)}")
 }
+
+// Reto 13: Reparto de Pedidos por Camión
+fun reto13RepartoPedidos() {
+    println("\n Reto 13: Reparto de Pedidos por Camión ")
+    val paquetes = (1..50).toList()
+    val tamanoLote = 10
+    var camion = 1
+    var i = 0
+    while (i < paquetes.size) {
+        val lote = mutableListOf<Int>()
+        for (j in i until minOf(i + tamanoLote, paquetes.size)) {
+            lote.add(paquetes[j])
+        }
+        println("Camión $camion: paquetes $lote")
+        i += tamanoLote
+        camion++
+    }
+}
