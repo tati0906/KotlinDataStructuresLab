@@ -526,3 +526,23 @@ fun reto29ParejasViajePeso() {
     }
     if (!encontrado) println("  No se encontró ninguna pareja que sume $target kg")
 }
+
+// Reto 30: Espejo de Layout de Tienda
+fun reto30EspejoLayout() {
+    println("\n Reto 30: Espejo de Layout de Tienda ")
+    val plano = arrayOf(
+        intArrayOf(1, 2, 3),
+        intArrayOf(4, 5, 6)
+    )
+    val filas = plano.size; val cols = plano[0].size
+    val transpuesto = Array(cols) { IntArray(filas) }
+    for (i in 0 until filas) {
+        for (j in 0 until cols) {
+            transpuesto[j][i] = plano[i][j]
+        }
+    }
+    println("Plano original (2x3):")
+    for (fila in plano) println("  ${fila.toList()}")
+    println("Plano transpuesto (3x2) para reorganización simétrica:")
+    for (fila in transpuesto) println("  ${fila.toList()}")
+}
