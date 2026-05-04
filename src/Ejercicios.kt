@@ -279,3 +279,22 @@ fun reto16MantenimientoSensores() {
     }
     println("Sensores activos (sin múltiplos de 3): $sensores")
 }
+
+// Reto 17: Mapa de Almacén (Matriz)
+fun reto17MapaAlmacen() {
+    println("\n Reto 17: Mapa de Almacén (Matriz 4x4) ")
+    val almacen = arrayOf(
+        intArrayOf(5, 2, 8, 1),
+        intArrayOf(3, 7, 4, 6),
+        intArrayOf(9, 1, 3, 2),
+        intArrayOf(4, 6, 5, 8)
+    )
+    var diagPrincipal = 0; var diagSecundaria = 0
+    val n = almacen.size
+    for (i in 0 until n) {
+        diagPrincipal += almacen[i][i]
+        diagSecundaria += almacen[i][n - 1 - i]
+    }
+    println("Diagonal principal (pasillo central): $diagPrincipal")
+    println("Diagonal secundaria: $diagSecundaria")
+}
