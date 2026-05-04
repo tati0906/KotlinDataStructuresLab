@@ -166,3 +166,33 @@ fun reto10RotacionTurnos() {
     }
     println("Turno rotado $k posiciones: $rotados")
 }
+
+// Reto 11: Organizador de Maleta
+fun reto11OrganizadorMaleta() {
+    println("\n Reto 11: Organizador de Maleta ")
+    val objetos = listOf(
+        Pair("Laptop", 2.5f), Pair("Ropa", 1.2f), Pair("Zapatos", 0.8f),
+        Pair("Libros", 3.0f), Pair("Neceser", 0.5f), Pair("Cámara", 1.5f)
+    )
+    val limiteAerolinea = 2.0f
+    val maleta = mutableMapOf<Int, MutableList<String>>()
+    for ((obj, peso) in objetos) {
+        val pesoKey = (peso * 10).toInt()
+        val clave = if (peso <= limiteAerolinea) pesoKey else pesoKey + 100
+        maleta.getOrPut(clave) { mutableListOf() }.add("$obj(${peso}kg)")
+    }
+    println("Objetos dentro del límite (≤${limiteAerolinea}kg):")
+    for ((_, lista) in maleta) {
+        for (item in lista) {
+            val p = item.substringAfter("(").substringBefore("kg)").toFloat()
+            if (p <= limiteAerolinea) println("  ✓ $item")
+        }
+    }
+    println("Objetos sobre el límite:")
+    for ((_, lista) in maleta) {
+        for (item in lista) {
+            val p = item.substringAfter("(").substringBefore("kg)").toFloat()
+            if (p > limiteAerolinea) println("  ✗ $item")
+        }
+    }
+}
