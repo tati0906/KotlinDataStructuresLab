@@ -152,3 +152,17 @@ fun reto9TraductorPaises() {
         println("El código [$iso] pertenece a [$nombre]")
     }
 }
+
+// Reto 10: Rotación de Turnos de Trabajo
+fun reto10RotacionTurnos() {
+    println("\n Reto 10: Rotación de Turnos de Trabajo ")
+    val empleados = mutableListOf("Ana", "Beto", "Carlos", "Diana", "Eva", "Felipe", "Gina")
+    val k = 2
+    println("Turno original: $empleados")
+    val n = empleados.size
+    val rotados = MutableList(n) { "" }
+    for (i in 0 until n) {
+        rotados[(i + k) % n] = empleados[i]
+    }
+    println("Turno rotado $k posiciones: $rotados")
+}
