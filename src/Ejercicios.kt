@@ -88,3 +88,14 @@ fun reto5HistorialNavegacion() {
     println("Historial invertido (botón Atrás):")
     for (url in temp) println("  <- $url")
 }
+
+// Reto 6: Compatibilidad de Intereses
+fun reto6CompatibilidadIntereses() {
+    println("\n Reto 6: Compatibilidad de Intereses (Match) ")
+    val persona1 = setOf("Lectura", "Ciclismo", "Cocina", "Viajes", "Fotografía")
+    val persona2 = setOf("Ciclismo", "Música", "Viajes", "Pintura", "Lectura")
+    val comunes = persona1.intersect(persona2)
+    val exclusivosP1 = persona1.subtract(persona2)
+    println("Pasatiempos en común: $comunes")
+    println("Exclusivos de persona 1: $exclusivosP1")
+}
