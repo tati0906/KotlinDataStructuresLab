@@ -244,3 +244,25 @@ fun reto14TicketUnico() {
     println("Tickets: $tickets")
     println("Primer ID único (no repetido): $primerUnico")
 }
+
+// Reto 15: Calculadora de IVA Selectiva
+fun reto15IVASelectiva() {
+    println("\n Reto 15: Calculadora de IVA Selectiva ")
+    val precios = mapOf(
+        "Televisor" to 1200000, "Leche" to 3500,
+        "Celular" to 850000, "Pan" to 4200,
+        "Laptop" to 2500000, "Jabón" to 8000
+    )
+    val umbral = 50000
+    val iva = 0.19
+    val preciosConIVA = mutableMapOf<String, Double>()
+    for ((prod, precio) in precios) {
+        if (precio > umbral) {
+            preciosConIVA[prod] = precio * (1 + iva)
+        }
+    }
+    println("Productos con IVA del 19% (precio > \$$umbral):")
+    for ((prod, precio) in preciosConIVA) {
+        println("  $prod: \$${"%.0f".format(precio)}")
+    }
+}
