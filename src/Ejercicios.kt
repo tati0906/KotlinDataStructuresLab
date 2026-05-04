@@ -196,3 +196,19 @@ fun reto11OrganizadorMaleta() {
         }
     }
 }
+
+// Reto 12: Verificador de Ruta Reversible
+fun reto12RutaReversible() {
+    println("\n Reto 12: Verificador de Ruta Reversible ")
+    fun esPalindromo(ruta: List<Pair<Int, Int>>): Boolean {
+        val n = ruta.size
+        for (i in 0 until n / 2) {
+            if (ruta[i] != ruta[n - 1 - i]) return false
+        }
+        return true
+    }
+    val ruta1 = listOf(Pair(0,0), Pair(1,2), Pair(3,4), Pair(1,2), Pair(0,0))
+    val ruta2 = listOf(Pair(0,0), Pair(1,2), Pair(3,4), Pair(5,6))
+    println("Ruta 1 $ruta1 → ¿Es espejo? ${esPalindromo(ruta1)}")
+    println("Ruta 2 $ruta2 → ¿Es espejo? ${esPalindromo(ruta2)}")
+}
