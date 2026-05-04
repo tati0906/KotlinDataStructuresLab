@@ -266,3 +266,16 @@ fun reto15IVASelectiva() {
         println("  $prod: \$${"%.0f".format(precio)}")
     }
 }
+
+// Reto 16: Mantenimiento de Sensores
+fun reto16MantenimientoSensores() {
+    println("\n Reto 16: Mantenimiento de Sensores ")
+    val sensores = mutableListOf(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18)
+    println("Sensores iniciales: $sensores")
+    val iterator = sensores.iterator()
+    while (iterator.hasNext()) {
+        val id = iterator.next()
+        if (id % 3 == 0) iterator.remove()
+    }
+    println("Sensores activos (sin múltiplos de 3): $sensores")
+}
