@@ -1,9 +1,6 @@
-//  Ejercicios.kt  –  30 Retos de Kotlin: Soluciones para la Vida Real
-//  Sesión 3: Colecciones y Estructuras de Datos
-
-// ─── Reto 1: Control de Gastos Diarios ───────────────────────
+// Reto 1: Control de Gastos Diarios
 fun reto1ControlGastos() {
-    println("\n=== Reto 1: Control de Gastos Diarios ===")
+    println("\n  Reto 1: Control de Gastos Diarios")
     val gastos = arrayOf(
         12000.0, 45000.0, 8500.0, 32000.0, 15000.0,
         27000.0, 9000.0, 50000.0, 3000.0, 21000.0,
