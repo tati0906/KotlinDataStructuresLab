@@ -392,3 +392,18 @@ fun reto22PilaPlatos() {
     push("Plato-1"); push("Plato-2"); push("Plato-3")
     pop(); push("Plato-4"); pop(); pop()
 }
+
+// Reto 23: Seguimiento de Dieta
+fun reto23SeguimientoDieta() {
+    println("\n Reto 23: Seguimiento de Dieta ")
+    val calorias = listOf(2100, 1850, 2300, 1950, 2450, 2000, 1800)
+    val diferencias = mutableListOf<Double>()
+    for (i in 1 until calorias.size) {
+        val promedioAnterior = calorias.subList(0, i).average()
+        diferencias.add(calorias[i] - promedioAnterior)
+    }
+    println("Diferencias vs promedio días anteriores:")
+    for (i in diferencias.indices) {
+        println("  Día ${i + 2}: ${if (diferencias[i] >= 0) "+" else ""}${"%.1f".format(diferencias[i])} kcal")
+    }
+}
