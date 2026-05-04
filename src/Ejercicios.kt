@@ -310,3 +310,26 @@ fun reto18FusionRecetas() {
     println("Lista de compras combinada:")
     for ((ing, cant) in listaCompras) println("  $ing: ${"%.1f".format(cant)} kg")
 }
+
+// Reto 19: Ranking de Apps por Calificación
+fun reto19RankingApps() {
+    println("\n Reto 19: Ranking de Apps por Calificación ")
+    val apps = mutableListOf(
+        Pair("AppA", 4.2), Pair("AppB", 4.8), Pair("AppC", 3.9),
+        Pair("AppD", 4.5), Pair("AppE", 4.1), Pair("AppF", 4.7),
+        Pair("AppG", 3.5), Pair("AppH", 4.9), Pair("AppI", 4.3),
+        Pair("AppJ", 4.6), Pair("AppK", 3.8), Pair("AppL", 4.4)
+    )
+    // Ordenamiento burbuja manual (mayor a menor)
+    for (i in 0 until apps.size - 1) {
+        for (j in 0 until apps.size - 1 - i) {
+            if (apps[j].second < apps[j + 1].second) {
+                val temp = apps[j]; apps[j] = apps[j + 1]; apps[j + 1] = temp
+            }
+        }
+    }
+    println("Top 10 Apps:")
+    for (i in 0 until minOf(10, apps.size)) {
+        println("  ${i + 1}. ${apps[i].first} - ★${apps[i].second}")
+    }
+}
